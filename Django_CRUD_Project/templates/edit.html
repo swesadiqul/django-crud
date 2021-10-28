@@ -1,0 +1,26 @@
+{% extends 'master.html' %}
+
+
+{% block body %}
+    <form action="/update/{{books.id}}">
+
+        {% csrf_token %}
+        <div class="w-50 m-auto">
+            <div class="mb-3">
+                <label class="form-group" for="title">Title</label>
+                <input class="form-control" type="text" name="title" value="{{books.title}}" placeholder="{{books.title}}">
+            </div>
+            <div class="mb-3">
+                <label class="form-group" for="price">Price</label>
+                <input class="form-control" type="text" name="price"  value="{{books.price}}" placeholder="{{books.price}}">
+            </div>
+           <div class="mb-3">
+            <label class="form-group" for="author">Author</label>
+            <input class="form-control" type="text" name="author"  value="{{books.author}}" placeholder="{{books.author}}">
+           </div>
+
+            <input class="btn btn-primary" type="submit" value="Update">
+        </div>
+
+    </form>
+{% endblock %}
